@@ -1,0 +1,272 @@
+@font-face {
+  font-family: "Mukta Vaani Light";
+  src: url("../fonts/muktavaani-light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Mukta Vaani Semibold";
+  src: url("../fonts/muktavaani-semibold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Mukta Vaani Bold";
+  src: url("../fonts/muktavaani-bold.ttf") format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+@media (orientation: portrait) {
+  .col-p-1  {width:  8.333vw}
+  .col-p-2  {width: 16.667vw}
+  .col-p-3  {width:     25vw}
+  .col-p-4  {width: 33.333vw}
+  .col-p-5  {width: 41.667vw}
+  .col-p-6  {width:     50vw}
+  .col-p-7  {width: 58.333vw}
+  .col-p-8  {width: 66.667vw}
+  .col-p-9  {width:     75vw}
+  .col-p-10 {width: 83.333vw}
+  .col-p-11 {width: 91.667vw}
+  .col-p-12 {width:    100vw}
+
+  #logo {
+    width: 50vw;
+    margin: 10vw 0 10vw 25vw;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 200px;
+    padding: 5vw;
+    transform: translateX(0);
+    transition-duration: 0.7s;
+  }
+
+  nav > ul > li {
+    list-style-type: none;
+    font-size: 14pt;
+  }
+
+  nav > ul > li:not(:last-child)::after { /*Trennstriche*/
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: black;
+    margin: 10px 0;
+  }
+
+  .dropdown::before {
+    content: "+";
+    margin-right: 20px;
+  }
+
+  .dropdown ul{
+    display: none;
+  }
+
+  #hamburger {
+    float: right;
+    margin: 34.5vw 9vw auto 0;
+    background-color: transparent;
+  }
+
+  #hamburger > img {
+    width: 7vw;
+    height: auto;
+  }
+}
+
+
+@media (orientation: landscape) {
+  .col-l-1  {width:  8.333vw}
+  .col-l-2  {width: 16.667vw}
+  .col-l-3  {width:     25vw}
+  .col-l-4  {width: 33.333vw}
+  .col-l-5  {width: 41.667vw}
+  .col-l-6  {width:     50vw}
+  .col-l-7  {width: 58.333vw}
+  .col-l-8  {width: 66.667vw}
+  .col-l-9  {width:     75vw}
+  .col-l-10 {width: 83.333vw}
+  .col-l-11 {width: 91.667vw}
+  .col-l-12 {width:    100vw}
+
+  #logo {
+    display: inline;
+    float: left;
+    padding-right: 5vw;
+  }
+
+  #logo img {
+    height: 100px;
+    width: auto;
+  }
+
+  #hamburger {
+    display: none;
+  }
+
+  header {
+    display: flex;
+    position: fixed;
+    top:0;
+    padding: 5px 21.667vw;
+  }
+
+  body {
+    min-height: 100vh;
+  }
+
+  nav {
+    align-self: flex-end;
+    width: 100%;
+  }
+
+  nav > ul {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  nav > ul > li {
+    list-style-type: none;
+    text-align: center;
+    margin: 5px;
+    padding-bottom: 12px;
+    flex: 1;
+    position: relative; /*for positioning of dropdown*/
+    top: 0;
+    left: 0;
+  }
+
+  nav > ul li::before {
+    content: "";
+    display: block;
+    height: 1px;
+    margin-bottom: 10px;
+    background-color: #000000;
+  }
+
+  nav > ul > li.current::before , /*lines above green links*/
+  nav > ul li:hover::before {
+    height: 4px;
+    background-color: #95bf21;
+  }
+
+  nav > ul > li:hover > a ,
+  .dropdown li:hover a {
+    color: #95bf21;
+  }
+
+  .dropdown li:hover::before {
+    margin-bottom: 7px;
+  }
+
+  .dropdown ul {
+    display: none;
+    position: absolute;
+    padding: 11px;
+    width: 100%;
+    background-color: #FFFFFF;
+    top: 100%;
+    left: 0;
+  }
+
+  .dropdown:hover ul,
+  .dropdown ul:hover {
+    display: block;
+  }
+
+  .dropdown li {
+    list-style-type: none;
+    margin-bottom: 10px;
+  }
+
+  main {
+    margin-top: 100px;
+  }
+}
+
+html {
+  font-family: "Mukta Vaani Light";
+  color: #000000;
+}
+
+header {
+  background-color: #FFFFFF;
+}
+
+#logo {
+  display: inline-block;
+}
+
+nav {
+  font-family: "Mukta Vaani Light";
+}
+
+main {
+  background-color: #BDD67C;
+  min-height: 100vh;
+}
+
+footer {
+  background-color: rgba(255,255,255,0.5);
+  font-size: 13pt;
+  padding: 10px 0;
+  color: #787A90;
+}
+
+footer p {
+  display: block;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: "Mukta Vaani Semibold";
+}
+
+h2 {
+  font-family: "Mukta Vaani Bold";
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.current a {
+  color: #95bf21;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Abstandhalter*/
