@@ -13,6 +13,16 @@
   src: url("../fonts/muktavaani-bold.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Cormorant Light Italic";
+  src: url("../fonts/cormorant-light-italic.otf") format("opentype");
+}
+
+@keyframes fade-in {
+  from {opacity: 0;}
+  to   {opacity: 1;}
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -20,7 +30,11 @@
   border: 0;
 }
 
+/*==========portrait styles==========*/
+
 @media (orientation: portrait) {
+  .p-invisible {display: none}
+
   .col-p-1  {width:  8.333vw}
   .col-p-2  {width: 16.667vw}
   .col-p-3  {width:     25vw}
@@ -83,10 +97,37 @@
     width: 7vw;
     height: auto;
   }
+
+  #first {
+    background-color: #BDD67C;
+  }
+
+  #title {
+    font-size: 27pt;
+    letter-spacing: 6pt;
+    line-height: 25pt;
+    margin: 2pt auto;
+  }
+
+  #name {
+    margin: 10px auto 20px auto;
+    font-size: 15pt;
+  }
+
+  section:not(#galerie) {
+    padding: 10px 12px;
+  }
+
+  .green {
+    color: #95BF21;
+  }
 }
 
+/*==========landscape styles==========*/
 
 @media (orientation: landscape) {
+  .l-invisible {display: none}
+
   .col-l-1  {width:  8.333vw}
   .col-l-2  {width: 16.667vw}
   .col-l-3  {width:     25vw}
@@ -111,10 +152,6 @@
     width: auto;
   }
 
-  #hamburger {
-    display: none;
-  }
-
   header {
     display: flex;
     position: fixed;
@@ -124,6 +161,14 @@
 
   body {
     min-height: 100vh;
+  }
+
+  video {
+    position: fixed;
+    top: 0;
+    z-index: -1;
+    min-height: 100vh;
+    min-width: 100vw;
   }
 
   nav {
@@ -159,12 +204,12 @@
   nav > ul > li.current::before , /*lines above green links*/
   nav > ul li:hover::before {
     height: 4px;
-    background-color: #95bf21;
+    background-color: #95BF21;
   }
 
   nav > ul > li:hover > a ,
   .dropdown li:hover a {
-    color: #95bf21;
+    color: #95BF21;
   }
 
   .dropdown li:hover::before {
@@ -191,14 +236,62 @@
     margin-bottom: 10px;
   }
 
-  main {
-    margin-top: 100px;
+  #title{
+    font-size: 52pt;
+    letter-spacing: 10pt;
+    margin: 45vh auto 20px auto;
+  }
+
+  #name {
+    font-size: 20pt;
+    margin-bottom: 40vh;
+  }
+
+  article {
+    padding-top: 119px;
+  }
+
+  #ueber > div{
+    display: flex;
+    padding-top: 50px;
+  }
+
+  #ueber > div > * {
+    flex: 1;
+  }
+
+  #ueber > div img{
+    margin: 80px 8vw 50px 0;
+  }
+
+  #ueber h1 {
+    position: absolute;
+  }
+
+  #ueber p {
+    margin-top: 80px;
+  }
+
+  footer {
+    margin-bottom: 40px;
+  }
+
+  h1 {
+    font-size: 50pt;
+    line-height: 45pt;
+  }
+
+  .green {
+    color: #BDD67C;
   }
 }
 
+/*==========universal styles==========*/
+
 html {
   font-family: "Mukta Vaani Light";
-  color: #000000;
+  color: #FFFFFF;
+  overflow-x: hidden;
 }
 
 header {
@@ -214,8 +307,16 @@ nav {
 }
 
 main {
+  background-color: transparent;
+}
+
+section:not(#first),
+article {
   background-color: #BDD67C;
-  min-height: 100vh;
+}
+
+section div {
+  margin: 0 auto;
 }
 
 footer {
@@ -234,6 +335,23 @@ h1 {
   font-family: "Mukta Vaani Semibold";
 }
 
+#title,
+#name {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+#title {
+  animation: fade-in 2s;
+}
+
+#name {
+  animation: fade-in 2s cubic-bezier(1,-0.03,.89,.02);
+  font-family: "Cormorant Light Italic";
+}
+
 h2 {
   font-family: "Mukta Vaani Bold";
 }
@@ -244,9 +362,8 @@ a {
 }
 
 .current a {
-  color: #95bf21;
+  color: #95BF21;
 }
-
 
 
 
