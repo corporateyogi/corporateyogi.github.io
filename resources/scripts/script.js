@@ -22,3 +22,11 @@ for (var i = 0; i < navigation.length; i++) {
 }
 
 //Bildergallerie
+
+var images = document.querySelectorAll("#galerie figure");
+
+for (var i = 0; i < images.length; i++) {
+  images[i].addEventListener("click", function() {
+    window.alert("Bildergallerie ist in Arbeit");
+  })
+}

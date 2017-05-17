@@ -187,6 +187,10 @@
     padding: 10px 12px;
   }
 
+  article > div{
+    padding: 10px;
+  }
+
   .green {
     color: #95BF21;
   }
@@ -270,18 +274,22 @@
     background-color: #000000;
   }
 
-  nav > ul > li.current::before , /*lines above green links*/
+  nav > ul li.current::before , /*lines above green links*/
   nav > ul li:hover::before {
     height: 4px;
     background-color: #95BF21;
   }
 
-  nav > ul > li:hover > a ,
-  .dropdown li:hover a {
+  nav > ul > li:hover > a {
     color: #95BF21;
   }
 
-  .dropdown li:hover::before {
+  .dropdown li:hover a {
+    color: #95BF21 !important;
+  }
+
+  .dropdown li:hover::before,
+  .dropdown li.current::before {
     margin-bottom: 7px;
   }
 
@@ -305,6 +313,10 @@
     margin-bottom: 10px;
   }
 
+  .dropdown li:not(.current) a {
+    color: #000000;
+  }
+
   #title{
     font-size: 52pt;
     letter-spacing: 10pt;
@@ -314,6 +326,14 @@
   #name {
     font-size: 20pt;
     margin-bottom: 40vh;
+  }
+
+  #title {
+    animation: fade-in 2s;
+  }
+
+  #name {
+    animation: fade-in 2s cubic-bezier(1,-0.03,.89,.02);
   }
 
   article {
@@ -415,6 +435,10 @@
     line-height: 45pt;
   }
 
+  .current a {
+    color: #95BF21;
+  }
+
   .green {
     color: #BDD67C;
   }
@@ -449,8 +473,40 @@ article {
   background-color: #BDD67C;
 }
 
-section > div {
+section > div,
+article > div {
   margin: 0 auto;
+}
+
+article > div {
+  padding-bottom: 30vh;
+}
+
+article h1 {
+  font-size: 50pt;
+  margin: 0 0 50px 0 !important;
+}
+
+article figure.back {
+  margin: 30px 0;
+}
+
+article figure.back img {
+  max-height: 30px;
+  width: auto;
+}
+
+article figure:not(.back) {
+  padding: 20px;
+}
+
+article p {
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+figure.back a {
+  display: inline-block;
 }
 
 footer {
@@ -477,12 +533,7 @@ h1 {
   color: #FFFFFF;
 }
 
-#title {
-  animation: fade-in 2s;
-}
-
 #name {
-  animation: fade-in 2s cubic-bezier(1,-0.03,.89,.02);
   font-family: "Cormorant Light Italic";
 }
 
@@ -553,8 +604,13 @@ form {
   flex-direction: column;
 }
 
+textarea {
+  resize: none;
+}
+
 input,
 textarea {
+  font-family: "Mukta Vaani Light";
   background-color: #FFFFFF;
   color: #777777;
   margin: 3px 0;
@@ -594,10 +650,6 @@ input:invalid, textarea:invalid {
   font-family: "Mukta Vaani Light";
   font-size: 10pt;
   color: #BDD67C;
-}
-
-.current a {
-  color: #95BF21;
 }
 
 
