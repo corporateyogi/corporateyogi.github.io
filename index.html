@@ -6,7 +6,7 @@
     <link type="text/css" rel="stylesheet" href="resources/styles/style.css" />
     <script src="resources/scripts/script.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Hannah Weber, Laura Eiberger, Isabel ...,Peter Gögelein, Marco Watermeier" />
+    <meta name="author" content="Hannah Weber, Laura Eiberger, Isabel Landenberger, Peter Gögelein, Marco Watermeier" />
     <meta name="description" content="Yoga für und in Unternehmen zur betrieblichen Gesundheitsförderung" />
     <meta name="keywords" content="BGM, Betriebliches Gesundheitsmanagement, Gefährdungsbeurteilung für psychische Erkrankungen, Burnout, Stressmanagement" />
   </head>
@@ -50,7 +50,9 @@
 
       <section id="ueber" class="col-l-12 col-p-12">
         <div class="col-l-6 col-p-12">
-          <img src="resources/images/profile-placeholder.png">
+          <figure>
+            <img src="resources/images/profile-placeholder.png">
+          </figure>
           <div>
             <h1>Über mich!</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus tortor, mattis ac leo ac, sagittis fringilla est. Etiam lacinia felis ex, sed tristique libero lobortis vitae. Praesent quam neque, bibendum non pharetra nec, accumsan sit amet tellus. Suspendisse posuere porta ante eu lobortis. Suspendisse potenti. Fusce eget enim sagittis magna efficitur efficitur non sed odio. Maecenas sed molestie diam. Aliquam a dolor mollis, suscipit ipsum vel, porta metus. Phasellus ut justo a erat rhoncus semper. Fusce dignissim nunc eu leo consequat, nec malesuada tellus convallis. Curabitur placerat in neque id eleifend. In quis nulla enim.</p>
@@ -61,21 +63,62 @@
       <section id="kurse" class="col-l-12 col-p-12">
         <div class="col-l-6 col-p-12">
           <img class="l-invisible" src="resources/images/yoga3.jpg" alt="yoga">
-          <a href="workshops.html">Workshops</a>
-          <a href="meditation.html">Meditation</a>
-          <a href="schnupperkurse.html">Schnupperkurse</a>
+          <a class="box-hover" href="workshops.html">Workshops</a>
+          <a class="box-hover" href="meditation.html">Meditation</a>
+          <a class="box-hover" href="schnupperkurse.html">Schnupperkurse</a>
         </div>
       </section>
 
       <section id="galerie" class="col-l-12 col-p-12">
         <div class="col-l-12 col-p-12">
-          <p>Galerie (in Arbeit)</p>
+          <!--images via CSS background-image-->
+          <figure></figure>
+          <figure></figure>
+          <figure></figure>
+          <figure></figure>
+          <figure></figure>
+          <figure></figure>
         </div>
       </section>
 
       <section id="kontakt" class="col-l-12 col-p-12">
         <div class="col-l-6 col-p-12">
-          <p>Kontakt (in Arbeit)</p>
+          <p class="box">Kontaktieren sie mich!</p>
+          <aside>
+            <h2>Kontakt</h2>
+            <div>
+              <p>Yogaweg 19, 73492 Ellwangen<br /><br />Tel: +49483903330<br />stephanie.trauby@gmail.com<br />&nbsp;</p>
+              <figure>
+                <a href="www.facebook.com">
+                  <img src="resources/images/facebook.svg" alt="Facebook" title="Facebook">
+                  <!--https://www.iconfinder.com/icons/1269920/facebook_letter_social_social_media_icon#size=128-->
+                </a>
+                <a href="www.twitter.com">
+                  <img src="resources/images/twitter.svg" alt="Twitter" title="Twitter">
+                  <!--https://www.iconfinder.com/icons/104501/bird_twitter_icon#size=128-->
+                </a>
+                <a href="www.instagram.com">
+                  <img src="resources/images/instagram.svg" alt="Instagram" title="Instagram">
+                  <!--https://www.iconfinder.com/icons/1161953/instagram_new_icon#size=128-->
+                </a>
+                <a href="www.vimeo.com">
+                  <img src="resources/images/vimeo.svg" alt="Vimeo" title="Vimeo">
+                  <!--https://www.iconfinder.com/icons/1269928/social_social_media_video_vimeo_icon#size=128-->
+                </a>
+                <a href="www.youtube.com">
+                  <img src="resources/images/youtube.svg" alt="Youtube" title="Youtube">
+                  <!--https://www.iconfinder.com/icons/306162/tube_you_youtube_icon#size=120-->
+                </a>
+              </figure>
+            </div>
+            <form>
+              <input id="inputName" type="text" name="Name" placeholder="Name" required>
+              <input id="inputEmail" type="email" name="Email" placeholder="E-Mail Adresse" required>
+              <input id="inputBetreff" type="text" name="Betreff" placeholder="Betreff" required>
+              <textarea id="inputNachricht" name="Nachricht" placeholder="Nachricht" rows="10" required></textarea>
+              <div><button type="submit" name="Senden">Senden</button></div>
+            </form>
+          </aside>
         </div>
       </section>
     </main>
