@@ -61,6 +61,7 @@
     background-color: rgba(255, 255, 255, 0.95);
     width: 200px;
     padding: 5vw;
+    padding-top: 20vh;
     transform: translateX(0);
     transition-duration: 0.7s;
   }
@@ -68,6 +69,7 @@
   nav > ul > li {
     list-style-type: none;
     font-size: 14pt;
+    color: #000000;
   }
 
   nav > ul > li:not(:last-child)::after { /*Trennstriche*/
@@ -114,7 +116,24 @@
     font-size: 15pt;
   }
 
-  section:not(#galerie) {
+  #ueber img,
+  #kurse img {
+    width: 100%;
+    height: auto;
+  }
+
+  #kurse a {
+    background-color: transparent;
+  }
+
+  #kurse a {
+    margin: 15px;
+    padding: 10px;
+    font-size: 16pt;
+    background-color: transparent;
+  }
+
+  section:not(#galerie) > div {
     padding: 10px 12px;
   }
 
@@ -272,6 +291,27 @@
     margin-top: 80px;
   }
 
+  #kurse {
+    background: url("../images/yoga3.jpg") center center/cover;
+  }
+
+  #kurse div {
+    padding: 50px;
+  }
+
+  #kurse a {
+    margin: 50px;
+    padding: 30px;
+    font-size: 25pt;
+    letter-spacing: 5pt;
+    background-color: rgba(150, 150, 150, 0.5);
+    transition: background-color 1s;
+  }
+
+  #kurse a:hover {
+    background-color: transparent;
+  }
+
   footer {
     margin-bottom: 40px;
   }
@@ -350,6 +390,15 @@ h1 {
 #name {
   animation: fade-in 2s cubic-bezier(1,-0.03,.89,.02);
   font-family: "Cormorant Light Italic";
+}
+
+#kurse a {
+  color: #FFFFFF;
+  display: block;
+  border: 10px solid #FFFFFF;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Mukta Vaani Bold";
 }
 
 h2 {
