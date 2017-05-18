@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="noscroll no-js">
   <head>
     <title>Der Corporate Yogi</title>
     <meta charset="utf-8" />
@@ -9,9 +9,20 @@
     <meta name="author" content="Hannah Weber, Laura Eiberger, Isabel Landenberger, Peter Gögelein, Marco Watermeier" />
     <meta name="description" content="Yoga für und in Unternehmen zur betrieblichen Gesundheitsförderung" />
     <meta name="keywords" content="BGM, Betriebliches Gesundheitsmanagement, Gefährdungsbeurteilung für psychische Erkrankungen, Burnout, Stressmanagement" />
+    <script>
+    document.querySelector("html").className =
+    document.querySelector("html").className.replace(" no-js", "");
+    </script>
   </head>
 
   <body>
+    <!--Preloader-->
+    <div id="preloader" class="load-notification">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
     <!--Bildergallerie-->
     <div id="viewer">
       <img id="imgExit" src="resources/images/exit.svg">
@@ -50,7 +61,7 @@
         <source src="resources/videos/video.mp4" type="video/mp4">
       </video>
       <section id="first" class="col-l-12 col-p-12">
-        <div class="col-l-12 col-p-12">
+        <div class="col-l-12 col-p-12 load-notification">
           <h1 id="title">Corporate<span class="green">.</span><br class="l-invisible"/>Yogi</h1>
           <h2 id="name">Stefanie Traub</h2>
         </div>

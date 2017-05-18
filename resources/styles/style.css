@@ -23,6 +23,30 @@
   src: url("../fonts/cormorant-light-italic.otf") format("opentype");
 }
 
+@keyframes loading-1 {
+  0%   {opacity: 0}
+  10%  {opacity: 0}
+  40%  {opacity: 1}
+  70%  {opacity: 0}
+  100% {opacity: 0}
+}
+
+@keyframes loading-2 {
+  0%   {opacity: 0}
+  20%  {opacity: 0}
+  50%  {opacity: 1}
+  80%  {opacity: 0}
+  100% {opacity: 0}
+}
+
+@keyframes loading-3 {
+  0%   {opacity: 0}
+  30%  {opacity: 0}
+  60%  {opacity: 1}
+  90%  {opacity: 0}
+  100% {opacity: 0}
+}
+
 @keyframes fade-in {
   from {opacity: 0;}
   to   {opacity: 1;}
@@ -33,6 +57,42 @@
   margin: 0;
   padding: 0;
   border: 0;
+}
+
+#preloader.load-complete,
+html.no-js #preloader,
+html.no-js #preloader * {
+  opacity: 0;
+  z-index: -1000;
+}
+
+#preloader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 100vh;
+  width: 100vw;
+  background-color: #BDD67C;
+  opacity: 1;
+  transition: opacity 0.5s, z-index 2s;
+}
+
+#preloader div{
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  animation: loading-2 2s ease 0s infinite;
+}
+
+#preloader div:first-child {
+animation-name: loading-1 !important;
+}
+
+#preloader div:last-child {
+animation-name: loading-3 !important;
 }
 
 #galerie figure:first-child {
@@ -75,6 +135,16 @@
   .col-p-10 {width: 83.333vw}
   .col-p-11 {width: 91.667vw}
   .col-p-12 {width:    100vw}
+
+  #preloader {
+    flex-direction: column;
+    padding: 43vh 0;
+  }
+
+  #preloader div{
+    height: 3vh;
+    width: 3vh;
+  }
 
   #logo {
     width: 50vw;
@@ -221,6 +291,16 @@
   .col-l-11 {width: 91.667vw}
   .col-l-12 {width:    100vw}
 
+  #preloader {
+    flex-direction: row;
+    padding: 0 43vw;
+  }
+
+  #preloader div{
+    height: 3vw;
+    width: 3vw;
+  }
+
   #logo {
     display: inline;
     float: left;
@@ -335,11 +415,11 @@
     margin-bottom: 40vh;
   }
 
-  #title {
+  .load-complete #title {
     animation: fade-in 2s;
   }
 
-  #name {
+  .load-complete #name {
     animation: fade-in 2s cubic-bezier(1,-0.03,.89,.02);
   }
 
@@ -483,6 +563,7 @@ html {
 
 header {
   background-color: #FFFFFF;
+  z-index: 50;
 }
 
 #logo {

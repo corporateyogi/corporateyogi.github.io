@@ -60,7 +60,15 @@ document.getElementById("imgExit").addEventListener("click", function() {
   html.className = "";
 });
 
+//preloader
 
+window.addEventListener("load", function () {
+  var elements = document.querySelectorAll(".load-notification");
+  for (element of elements) {
+    element.className = element.className.replace("load-notification","load-complete");
+  }
+  html.className = html.className.replace("noscroll","");
+})
 
 
 
