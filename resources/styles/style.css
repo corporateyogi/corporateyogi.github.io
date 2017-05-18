@@ -120,7 +120,7 @@ animation-name: loading-3 !important;
 }
 /*==========portrait styles==========*/
 
-@media (orientation: portrait) {
+@media (orientation: portrait), (max-width: 999px) {
   .p-invisible {display: none}
 
   .col-p-1  {width:  8.333vw}
@@ -273,9 +273,104 @@ animation-name: loading-3 !important;
   }
 }
 
+@media (orientation: portrait) and (min-width: 700px), (max-width: 999px) and (min-width: 700px) {
+  html {
+    font-size: 16pt;
+  }
+
+  section:not(#galerie) > div {
+    padding: 15px 17px;
+  }
+
+  #logo {
+    width: 30vw;
+    margin: 0 0 0 30vw;
+  }
+
+  #hamburger {
+    margin-top: 12.5vw;
+    margin-right: 10vw;
+  }
+
+  #title {
+    font-size: 52pt;
+    letter-spacing: 10pt;
+    line-height: 45pt;
+    margin-top: 25px;
+  }
+
+  #name {
+    font-size: 20pt;
+    margin-bottom: 50px;
+  }
+
+  #ueber h1 {
+    margin-top: 25px;
+  }
+
+  #ueber p {
+    margin-bottom: 30px;
+  }
+
+  #ueber figure {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+
+  #ueber img{
+    max-height: 500px;
+    width: auto;
+
+  }
+
+  #kontakt h2 {
+    font-size: 30pt;
+  }
+
+  #kontakt img {
+    height: 50px !important;
+  }
+
+  .box,
+  .box-hover {
+    font-size: 30pt;
+    letter-spacing: 5pt;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  input,
+  textarea,
+  button {
+    font-size: 14pt !important;
+  }
+
+  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    font-size: 14pt !important;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    font-size: 14pt !important;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    font-size: 14pt !important;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-size: 14pt !important;
+  }
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    font-size: 14pt !important;
+  }
+
+  h1 {
+    font-size: 50pt;
+    line-height: 45pt;
+  }
+}
+
 /*==========landscape styles==========*/
 
-@media (orientation: landscape) {
+@media (orientation: landscape) and (min-width: 1000px) {
   .l-invisible {display: none}
 
   .col-l-1  {width:  8.333vw}
@@ -347,6 +442,7 @@ animation-name: loading-3 !important;
     text-align: center;
     margin: 5px;
     padding-bottom: 12px;
+    min-width: 70px;
     flex: 1;
     position: relative; /*for positioning of dropdown*/
     top: 0;
@@ -385,6 +481,7 @@ animation-name: loading-3 !important;
     position: absolute;
     padding: 11px;
     width: 100%;
+    min-width: 130px;
     background-color: #FFFFFF;
     top: 100%;
     left: 0;
@@ -468,11 +565,13 @@ animation-name: loading-3 !important;
 
   .box {
     background-color: transparent;
+    min-width: 450px;
   }
 
   .box-hover{
     background-color: rgba(150, 150, 150, 0.5);
     transition: background-color 1s;
+    min-width: 450px;
   }
 
   .box-hover:hover {
