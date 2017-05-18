@@ -23,10 +23,52 @@ for (var i = 0; i < navigation.length; i++) {
 
 //Bildergallerie
 
+var body = document.querySelector("body");
+var html = document.querySelector("html");
+var viewer = document.querySelector("#viewer");
+var imgCurrent = document.querySelector("#imgCurrent");
 var images = document.querySelectorAll("#galerie figure");
+var index = null;
 
 for (var i = 0; i < images.length; i++) {
-  images[i].addEventListener("click", function() {
-    window.alert("Bildergallerie ist in Arbeit");
+  images[i].addEventListener("click", function(e) {
+    viewer.className = "viewer";
+    html.className = "noscroll";
+    var bgImage = e.target.style.backgroundImage;
+    imgCurrent.src = bgImage.slice(5, bgImage.length - 2);
+    index = e.target.id;
   })
 }
+
+document.getElementById("imgBack").addEventListener("click", function() {
+  index--;
+  if (index < 0) index = images.length - 1;
+  var bgImage = images[index].style.backgroundImage;
+  imgCurrent.src = bgImage.slice(5, bgImage.length - 2);
+});
+
+document.getElementById("imgForward").addEventListener("click", function() {
+  index++;
+  if (index > images.length - 1) index = 0;
+  var bgImage = images[index].style.backgroundImage;
+  imgCurrent.src = bgImage.slice(5, bgImage.length - 2);
+});
+
+document.getElementById("imgExit").addEventListener("click", function() {
+  index = null;
+  viewer.className = "";
+  html.className = "";
+});
+
+
+
+
+
+
+
+
+
+
+
+
+//
